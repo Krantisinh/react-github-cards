@@ -1,3 +1,9 @@
+# The Github Cards App
+
+This is a sample react app that lets search Github users and populate them in a list.
+
+----------------------------------------------------------------------------------
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

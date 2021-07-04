@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.scss";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React from "react";
+import CardList from './components/card-list';
+import Search from "./components/search";
+import Header from './components/header';
+
+class App extends React.Component {
+  state = {
+    profiles: [],
+  };
+
+  addNewProfile = (profile) => {
+    this.setState({ profiles: [...this.state.profiles, profile] });
+  };
+
+  render() {
+    return (
+      <div className="app">
+        <Header />
+        <Search callBack={this.addNewProfile} />
+        <CardList data={this.state.profiles} />
+      </div>
+    );
+  }
 }
 
 export default App;
